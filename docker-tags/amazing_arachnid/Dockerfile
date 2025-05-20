@@ -31,12 +31,11 @@ RUN python3 -m pip install --upgrade --break-system-packages \
   mkdocs-bootswatch
 
 # Add assets
-COPY assets/pandoc/pandoc*.deb /pandoc.deb
+COPY assets/pandoc*.deb /pandoc.deb
 
 # Install pandoc
 RUN dpkg -i /pandoc.deb && \
   rm /pandoc.deb
-
 
 # Clean a little bit
 RUN rm -rf /var/lib/apt/lists/* /var/cache/apt/* /var/log/dpkg.log /var/log/apt/* && \
