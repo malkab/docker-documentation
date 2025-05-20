@@ -1,0 +1,7 @@
+name: docker-documentation
+root: /home/git/docker/docker-documentation
+
+windows:
+  - docker-documentation: >
+      clear ;
+      sleep 0.2
