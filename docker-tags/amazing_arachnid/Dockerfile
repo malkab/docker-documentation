@@ -29,7 +29,9 @@ RUN ln -s /usr/bin/python3 /usr/bin/python
 RUN python3 -m pip install --upgrade --break-system-packages \
   mkdocs \
   mkdocs-material \
-  mkdocs-bootswatch
+  mkdocs-bootswatch \
+  watchdog \
+  jinja2
 
 # Add assets
 COPY assets/pandoc*.deb /pandoc.deb
