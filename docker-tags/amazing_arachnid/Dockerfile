@@ -19,7 +19,8 @@ RUN apt-get update && \
       imagemagick \
       libncurses5 \
       python3 \
-      python3-pip
+      python3-pip \
+      git-flow
 
 RUN ldconfig
 
