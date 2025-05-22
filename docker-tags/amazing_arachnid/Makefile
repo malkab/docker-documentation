@@ -1,22 +1,22 @@
 # ¡ATENCIÓN! Esto hay que cambiarlo también en el FROM del Dockerfile.
 # Nombre de la imagen base, nombre:tag.
-BASE_IMAGE_NAME=debian_devcontainer:bookworm
+BASE_IMAGE_NAME := debian_devcontainer:bookworm
 # Nombre de la imagen, nombre:tag.
-IMAGE_TAG=amazing_arachnid
-IMAGE_NAME=documentation:$(IMAGE_TAG)
-IMAGE_SAVE_NAME=documentation_$(IMAGE_TAG)
+IMAGE_TAG := amazing_arachnid
+IMAGE_NAME := documentation:$(IMAGE_TAG)
+IMAGE_SAVE_NAME := documentation_$(IMAGE_TAG)
 # Nombre del usuario dentro de la imagen.
-IMAGE_USER=vscode
+IMAGE_USER := vscode
 
 # Para el push a registros privados, especialmente el Gitea.
-PUSH_OWNER=whateveruser
-PUSH_REGISTRY=a.gitea.com
-PUSH_REGISTRY_URL=https://$(PUSH_REGISTRY)
+PUSH_OWNER := whateveruser
+PUSH_REGISTRY := a.gitea.com
+PUSH_REGISTRY_URL := https://$(PUSH_REGISTRY)
 
 # Atajos.
-GIT_COMMIT=$(shell git rev-parse --short=6 HEAD)
+GIT_COMMIT := $(shell git rev-parse --short=6 HEAD)
 
-LAST_SAVED_VERSION=$(shell \
+LAST_SAVED_VERSION := $(shell \
 	find . -maxdepth 1 -type f \
 		-name '*.tar.gz' \
 		-printf '%T@ %p\n' | \
